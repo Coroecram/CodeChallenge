@@ -6,7 +6,6 @@ class InvitationsController < ApplicationController
 
   def create
     @invitation = Invitation.new(invitation_params)
-    @invitation.user_id = current_user.id
 
     if @invitation.save
       redirect_to event_url(@invitation.event_id)
