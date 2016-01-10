@@ -1,9 +1,9 @@
-#### CodeChallenge: Eventbrite Mini
+## CodeChallenge: Eventbrite Mini
 
-##We have three classes
-# **Event** - An event has a name, date, and attendees.
-# **Person** - A person has a first name and a last name.
-# **Invite** -  An invite has a person and an event.
+###We have three classes
+#### **Event** - An event has a name, date, and attendees.
+#### **Person** - A person has a first name and a last name.
+#### **Invite** -  An invite has a person and an event.
 
 Since there was only 1 hour to complete this assignment, my browser-based API is far from complete.
 
