@@ -1,0 +1,32 @@
+<% form_action = (invitation.persisted? ? invitation_url(invitation.id) : invitations_url ) %>
+<% hidden_method = (invitation.persisted? ? "PATCH" : "POST" ) %>
+
+
+<form action="<%=form_action%>" method="POST">
+  <input type="hidden" name="_method" value="<%=hidden_method%>">
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"
+
+  <label>Event Name:
+    <input type="text" name="invitation[event_name]">
+  </label>
+  <label>Event Id:
+    <input type="number" name="invitation[event_id]" min="1" max="<%= Event.last.id %>">
+  </label>
+  <br>
+
+  <label>Person's Name:
+    <input type="text" name="invitation[person_name]">
+  </label>
+  <label>Person Id:
+    <input type="number" name="invitation[person_id]" min="1" max="<%= Person.last.id %>">
+  </label>
+  <br>
+
+
+
+  <br>
+
+  <button>Submit</button>
+</form>
+<br>
+<a href="<%= invitations_url %>" >All invitations</a>
