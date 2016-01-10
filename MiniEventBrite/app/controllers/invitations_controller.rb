@@ -1,4 +1,5 @@
 class InvitationsController < ApplicationController
+
   def new
   @invitation = Invitation.new
     render :new
@@ -16,6 +17,7 @@ class InvitationsController < ApplicationController
 
   def edit
     @invitation = Invitation.find(params[:id])
+
     render :edit
   end
 
@@ -32,6 +34,7 @@ class InvitationsController < ApplicationController
   def destroy
     @invitation = Invitation.find(params[:id])
     Inviation.destroy(@invitation)
+
     redirect_to root_url
   end
 
