@@ -14,6 +14,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    @event = Event.find(params[:id])
+
+    render :show
+  end
+
   def edit
     @event = Event.find(params[:id])
 

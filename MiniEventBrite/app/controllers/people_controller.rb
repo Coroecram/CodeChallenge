@@ -14,6 +14,12 @@ class PeopleController < ApplicationController
     end
   end
 
+  def show
+    @person = Person.find(params[:id])
+
+    render :show
+  end
+
   def edit
     @person = Person.find(params[:id])
 
