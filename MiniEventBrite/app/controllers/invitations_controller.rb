@@ -1,12 +1,12 @@
 class InvitationsController < ApplicationController
 
   def new
-  @invitation = Invitation.new
+    @invitation = Invitation.new
     render :new
   end
 
   def create
-    @invitation = Invitation.new(invitation_params)
+    @invitation = Invitation_Create.new(invitation_params)
 
     if @invitation.save
       redirect_to event_url(@invitation.event_id)
@@ -40,7 +40,7 @@ class InvitationsController < ApplicationController
 
   private
   def invitation_params
-    params.require(:invite).permit(:event_id, :person_id)
+    params.require(:invite).permit(:event_id, :person_id, :event_name, :person_name)
   end
 
 end
