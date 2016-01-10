@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   has_many :invitations
-  has_many :invited,   -> {where(confirmation: false)}, class_name: 'Person', through: :invitations
-  has_many :attendees, -> {where(confirmation: true)},  class_name: 'Person', through: :invitations
+  has_many :invited,   -> {where(invitations: {confirmation: false})}, through: :invitations, source: :person
+  has_many :attendees, -> {where(invitations: {confirmation: true})}, through: :invitations, source: :person
 
   validates :name, presence: true, uniqueness: { scope: :date }
   validates :date, uniqueness: { scope: :name }
