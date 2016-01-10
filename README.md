@@ -1,12 +1,26 @@
 #### CodeChallenge: Eventbrite Mini
 
-Please spend no more than **1 hour** to complete the following challenge.
+##We have three classes
+# **Event** - An event has a name, date, and attendees.
+# **Person** - A person has a first name and a last name.
+# **Invite** -  An invite has a person and an event.
 
-We need three classes in either **Ruby or Javascript**: 
-* **Event** - An event has a name, date, and attendees.
-* **Person** - A person has a first name and a last name.
-* **Invite** -  An invite has a person and an event.
+Since there was only 1 hour to complete this assignment, my browser-based API is far from complete.
 
-Once completed you should easily be able to create events, and get them attended by many people by way of invites.  The way you structure your api, and how to interact with it is totally up to you.
+However, the use of this "miniapp" is good enough, especially considering the time constraints,
+by simply using the Rails Console. This is accessible by changing the console directory ('cd') to the
+MiniEventBrite folder within this project and entering 'rails c' once there.
 
-**Fork this repository** for you solution, and send us the link.
+From the Rails console,  a user can do the RESTful options for Events, Invites, and Users.
+
+I added another column to Invitations where they can be confirmed so that Events have both Invited and Attendees.
+
+Events need a name and date, so to create an Event, for example, type in:
+Event.create!(name: "First Event", date: DateTime.new(2016, 1, 10))
+(With the browser-based API, this would be much more intuitive.)
+
+A Person needs a firstname and lastname, so to create a Person, for example, type in:
+Person.create!(firstname: "Jane", lastname: "Doe")
+
+Finally, to create an Invitation you need an event_id and person_id, so, following from the last two examples:
+Invitation.create!(event_id: 1, person_id: 1) will create an Invitation for Jane Doe to the First Event.
